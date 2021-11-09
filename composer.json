@@ -1,0 +1,26 @@
+{
+  "name": "datalinx/dpd-php-sdk",
+  "description": "PHP SDK for DPD Slovenia (Slovenija) and Croatia (Hrvatska)",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+	{
+	  "name": "Omer Šabić",
+	  "email": "omer@datalinx.si"
+	}
+  ],
+  "keywords": ["dpd", "easyship", "api", "webservice", "php", "sdk", "slovenia", "croatia"],
+  "homepage": "https://github.com/datalinx/dpd-php-sdk",
+  "autoload": {
+	"psr-4": {
+	  "DataLinx\\DPD\\": "src/"
+	}
+  },
+  "require": {
+	"php": ">=7.4",
+	"ext-curl": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5"
+  }
+}
