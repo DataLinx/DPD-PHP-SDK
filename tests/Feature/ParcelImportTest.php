@@ -30,7 +30,7 @@ class ParcelImportTest extends TestCase {
 		$this->assertEquals(getenv('dpd.password'), $this->api->password);
 		$this->assertEquals(getenv('dpd.country_code'), $this->api->country_code);
 
-		$request = new ParcelImport();
+		$request = new ParcelImport($this->api);
 		$request->name1 = 'Zdravko Dren';
 		$request->street = 'Partizanska';
 		$request->rPropNum = '44';
@@ -43,15 +43,19 @@ class ParcelImportTest extends TestCase {
 		$request->cod_purpose = 'CODREF001';
 		$request->predict = TRUE;
 
-		$response = $this->api->send($request);
+        $response = $request->send();
 
 		$this->assertInstanceOf(ParcelImportResponse::class, $response);
 		$this->assertTrue($response->isSuccessful());
+        $this->assertNull($response->getError());
+        $this->assertNotEmpty($response->getParcelNumbers());
+        $this->assertIsArray($response->getData());
+        $this->assertInstanceOf(ParcelImport::class, $response->getRequest());
 	}
 
 	public function testRequiredAttribute()
 	{
-		$request = new ParcelImport();
+		$request = new ParcelImport($this->api);
 
 		$this->expectException(ValidationException::class);
 		$this->expectExceptionCode(ValidationException::CODE_ATTR_REQUIRED);

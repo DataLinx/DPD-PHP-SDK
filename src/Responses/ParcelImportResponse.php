@@ -19,9 +19,9 @@ class ParcelImportResponse extends AbstractResponse {
 	/**
 	 * Get error text message
 	 *
-	 * @return string
+	 * @return string|null
 	 */
-	public function getError() : string
+	public function getError() : ?string
 	{
 		return $this->getParameter('errlog');
 	}

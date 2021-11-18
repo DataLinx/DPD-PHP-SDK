@@ -30,12 +30,11 @@ interface RequestInterface {
 	 */
 	public function getEndpoint() : string;
 
-	/**
-	 * Create response object
-	 *
-	 * @param array $data API response data
-	 * @return ResponseInterface
-	 */
-	public function createResponse(array $data): ResponseInterface;
+    /**
+     * Send the request to the API
+     *
+     * @return ResponseInterface
+     */
+    public function send() : ResponseInterface;
 
 }

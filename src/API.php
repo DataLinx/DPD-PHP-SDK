@@ -3,8 +3,6 @@
 namespace DataLinx\DPD;
 
 use DataLinx\DPD\Exceptions\APIException;
-use DataLinx\DPD\Exceptions\ValidationException;
-use DataLinx\DPD\Requests\AbstractRequest;
 
 class API {
 
@@ -33,28 +31,6 @@ class API {
 		$this->username = $username;
 		$this->password = $password;
 		$this->country_code = $country_code;
-	}
-
-	/**
-	 * @param AbstractRequest $request
-	 * @return Responses\ResponseInterface
-	 * @throws APIException|ValidationException
-	 */
-	public function send(AbstractRequest $request)
-	{
-		$this->validate();
-		$request->validate();
-
-		$data = [
-			'username' => $this->username,
-			'password' => $this->password,
-		];
-
-		$data += $request->getData();
-
-		$response_data = $this->sendRequest($request->getEndpoint(), $data);
-
-		return $request->createResponse($response_data);
 	}
 
 	/**
@@ -102,7 +78,7 @@ class API {
 	 * @return array Response array
 	 * @throws APIException
 	 */
-	private function sendRequest(string $endpoint, array $data) : array
+	public function sendRequest(string $endpoint, array $data) : array
 	{
 		$ch = curl_init($this->getUrl() . $endpoint . '?' . http_build_query($data));
 

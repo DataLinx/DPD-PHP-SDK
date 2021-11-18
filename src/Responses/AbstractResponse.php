@@ -12,12 +12,12 @@ abstract class AbstractResponse implements ResponseInterface {
 	/**
 	 * @var array Data as received by the API
 	 */
-	public array $data;
+	protected array $data;
 
 	/**
 	 * @var RequestInterface Original request that was sent to the API
 	 */
-	public RequestInterface $request;
+	protected RequestInterface $request;
 
 	/**
 	 * @param array $data Response data
@@ -28,6 +28,26 @@ abstract class AbstractResponse implements ResponseInterface {
 		$this->data = $data;
 		$this->request = $request;
 	}
+
+    /**
+     * Get internal data array
+     *
+     * @return array
+     */
+    public function getData() : array
+    {
+        return $this->data;
+    }
+
+    /**
+     * Get associated request that was sent to the API
+     *
+     * @return RequestInterface
+     */
+    public function getRequest() : RequestInterface
+    {
+        return $this->request;
+    }
 
 	/**
 	 * Get response data parameter

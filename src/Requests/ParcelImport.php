@@ -6,7 +6,6 @@ use DataLinx\DPD\Exceptions\ValidationException;
 use DataLinx\DPD\ParcelCODType;
 use DataLinx\DPD\ParcelType;
 use DataLinx\DPD\Responses\ParcelImportResponse;
-use DataLinx\DPD\Responses\ResponseInterface;
 
 class ParcelImport extends AbstractRequest {
 
@@ -185,7 +184,6 @@ class ParcelImport extends AbstractRequest {
 		static $required = [
 			'name1',
 			'street',
-			'rPropNum',
 			'city',
 			'country',
 			'pcode',
@@ -240,7 +238,6 @@ class ParcelImport extends AbstractRequest {
 		$data = [
 			'name1' => $this->name1,
 			'street' => $this->street,
-			'rPropNum' => $this->rPropNum,
 			'city' => $this->city,
 			'country' => $this->country,
 			'pcode' => $this->pcode,
@@ -252,6 +249,7 @@ class ParcelImport extends AbstractRequest {
 		// ------------------------------------------------------------
 		$optional = [
 			'name2',
+            'rPropNum',
 			'contact',
 			'email',
 			'phone',
@@ -325,11 +323,13 @@ class ParcelImport extends AbstractRequest {
 		return 'parcel/parcel_import';
 	}
 
-	/**
-	 * @inheritDoc
-	 */
-	public function createResponse($data): ResponseInterface
-	{
-		return new ParcelImportResponse($data, $this);
-	}
+    /**
+     * @return ParcelImportResponse
+     * @throws ValidationException
+     * @throws \DataLinx\DPD\Exceptions\APIException
+     */
+    public function send(): ParcelImportResponse
+    {
+        return new ParcelImportResponse($this->sendRequest(), $this);
+    }
 }
