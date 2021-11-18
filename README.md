@@ -7,4 +7,4 @@ It appears each region has its own version, so this will not work for any other 
 
 ## Requirements
 - PHP >= 7.4
-- CURL PHP extension
+- CURL and JSON PHP extensions

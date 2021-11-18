@@ -13,12 +13,14 @@
   "homepage": "https://github.com/datalinx/dpd-php-sdk",
   "autoload": {
 	"psr-4": {
-	  "DataLinx\\DPD\\": "src/"
+	  "DataLinx\\DPD\\": "src/",
+      "DataLinx\\DPD\\Tests\\": "tests/"
 	}
   },
   "require": {
 	"php": ">=7.4",
-	"ext-curl": "*"
+	"ext-curl": "*",
+    "ext-json": "*"
   },
   "require-dev": {
     "phpunit/phpunit": "^9.5"
