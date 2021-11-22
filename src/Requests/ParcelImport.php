@@ -30,9 +30,9 @@ class ParcelImport extends AbstractRequest {
 	public string $street;
 
 	/**
-	 * @var string Receiver house number (case-sensitive)
+	 * @var string|null Receiver house number (case-sensitive)
 	 */
-	public string $rPropNum;
+	public ?string $rPropNum = null;
 
 	/**
 	 * @var string Receiver city

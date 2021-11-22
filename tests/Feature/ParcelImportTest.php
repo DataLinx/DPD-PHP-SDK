@@ -63,4 +63,23 @@ class ParcelImportTest extends TestCase {
 
 		$request->validate();
 	}
+
+    public function testNoPropNum()
+    {
+        $request = new ParcelImport($this->api);
+        $request->name1 = 'Zdravko Dren';
+        $request->street = 'Partizanska 12';
+        $request->rPropNum = NULL;
+        $request->city = 'Izola';
+        $request->country = 'SI';
+        $request->pcode = '6310';
+        $request->num_of_parcel = 1;
+        $request->parcel_type = ParcelType::HOME_B2C;
+        $request->predict = TRUE;
+        $request->phone = '090123456';
+
+        $response = $request->send();
+
+        $this->assertInstanceOf(ParcelImportResponse::class, $response);
+    }
 }
