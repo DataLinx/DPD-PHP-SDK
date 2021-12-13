@@ -39,7 +39,7 @@ class ParcelImportTest extends TestCase {
 		$request->pcode = '6310';
 		$request->num_of_parcel = 1;
 		$request->parcel_type = ParcelType::CLASSIC_COD;
-		$request->cod_amount = 12.34;
+		$request->cod_amount = 1234.56;
 		$request->cod_purpose = 'CODREF001';
 		$request->predict = TRUE;
 

@@ -282,13 +282,13 @@ class ParcelImport extends AbstractRequest {
 		// Weight in kg
 		if ($this->pudo_id)
 		{
-			$data['weight'] = number_format($this->weight, 3);
+			$data['weight'] = number_format($this->weight, 3, '.', '');
 		}
 
 		// COD amount
 		if ($this->cod_amount)
 		{
-			$data['cod_amount'] = number_format($this->cod_amount, 2);
+			$data['cod_amount'] = number_format($this->cod_amount, 2, '.', '');
 		}
 
 		// Receiver notifications
