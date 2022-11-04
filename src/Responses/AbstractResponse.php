@@ -7,34 +7,34 @@ use DataLinx\DPD\Requests\RequestInterface;
 /**
  * Abstract response class that all responses should extend
  */
-abstract class AbstractResponse implements ResponseInterface {
+abstract class AbstractResponse implements ResponseInterface
+{
+    /**
+     * @var array Data as received by the API
+     */
+    protected array $data;
 
-	/**
-	 * @var array Data as received by the API
-	 */
-	protected array $data;
+    /**
+     * @var RequestInterface Original request that was sent to the API
+     */
+    protected RequestInterface $request;
 
-	/**
-	 * @var RequestInterface Original request that was sent to the API
-	 */
-	protected RequestInterface $request;
-
-	/**
-	 * @param array $data Response data
-	 * @param RequestInterface $request Original request
-	 */
-	public function __construct(array $data, RequestInterface $request)
-	{
-		$this->data = $data;
-		$this->request = $request;
-	}
+    /**
+     * @param array $data Response data
+     * @param RequestInterface $request Original request
+     */
+    public function __construct(array $data, RequestInterface $request)
+    {
+        $this->data = $data;
+        $this->request = $request;
+    }
 
     /**
      * Get internal data array
      *
      * @return array
      */
-    public function getData() : array
+    public function getData(): array
     {
         return $this->data;
     }
@@ -44,19 +44,19 @@ abstract class AbstractResponse implements ResponseInterface {
      *
      * @return RequestInterface
      */
-    public function getRequest() : RequestInterface
+    public function getRequest(): RequestInterface
     {
         return $this->request;
     }
 
-	/**
-	 * Get response data parameter
-	 *
-	 * @param string $name Parameter name
-	 * @return mixed|null
-	 */
-	protected function getParameter(string $name)
-	{
-		return $this->data[$name] ?? NULL;
-	}
+    /**
+     * Get response data parameter
+     *
+     * @param string $name Parameter name
+     * @return mixed|null
+     */
+    protected function getParameter(string $name)
+    {
+        return $this->data[$name] ?? null;
+    }
 }

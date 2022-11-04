@@ -7,8 +7,8 @@ use DataLinx\DPD\API;
 /**
  * Abstract request class that all requests should extend
  */
-abstract class AbstractRequest implements RequestInterface {
-
+abstract class AbstractRequest implements RequestInterface
+{
     /**
      * API instance
      *
