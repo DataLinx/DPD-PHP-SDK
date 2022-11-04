@@ -13,9 +13,13 @@
   "homepage": "https://github.com/datalinx/dpd-php-sdk",
   "autoload": {
 	"psr-4": {
-	  "DataLinx\\DPD\\": "src/",
-      "DataLinx\\DPD\\Tests\\": "tests/"
+	  "DataLinx\\DPD\\": "src/"
 	}
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "DataLinx\\DPD\\Tests\\": "tests/"
+    }
   },
   "require": {
 	"php": ">=7.4",
