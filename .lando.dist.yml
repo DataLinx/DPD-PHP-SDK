@@ -1,0 +1,16 @@
+name: dpd-php-sdk
+services:
+  appserver:
+    type: php:8.2
+    via: cli
+    webroot: .
+    xdebug: "debug,coverage,develop"
+tooling:
+  php:
+    service: appserver
+  composer:
+    service: appserver
+  phpunit:
+    service: appserver
+    description: Run PHPUnit tests
+    cmd: "/app/vendor/bin/phpunit"
