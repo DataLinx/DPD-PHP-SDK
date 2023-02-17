@@ -1,7 +1,7 @@
 name: dpd-php-sdk
 services:
   appserver:
-    type: php:8.2
+    type: php:8.1
     via: cli
     webroot: .
     xdebug: "debug,coverage,develop"
