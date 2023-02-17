@@ -3,6 +3,7 @@
 namespace DataLinx\DPD;
 
 use DataLinx\DPD\Exceptions\APIException;
+use JsonException;
 
 class API
 {
@@ -38,7 +39,7 @@ class API
      *
      * @throws APIException
      */
-    public function validate()
+    public function validate(): void
     {
         foreach (get_object_vars($this) as $key => $val) {
             if (empty($val)) {
@@ -77,6 +78,7 @@ class API
      * @param array $data Request data
      * @return array Response array
      * @throws APIException
+     * @noinspection CurlSslServerSpoofingInspection
      */
     public function sendRequest(string $endpoint, array $data): array
     {
@@ -103,6 +105,10 @@ class API
             throw new APIException('DPD API request failed! cURL error: '. $error .' (err.no.: '. $err_no .', HTTP code: '. $code .')', $code);
         }
 
-        return json_decode($response, true);
+        try {
+            return json_decode($response, true, 512, JSON_THROW_ON_ERROR);
+        } catch (JsonException $exception) {
+            throw new APIException('DPD API request failed! JSON decode error: '. $exception->getMessage(), 0, $exception);
+        }
     }
 }
