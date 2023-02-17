@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace DataLinx\DPD\Tests\Unit;
 
@@ -16,5 +18,4 @@ class HelperTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
         Helper::getTrackingUrl('XXX', 'it');
     }
-
 }

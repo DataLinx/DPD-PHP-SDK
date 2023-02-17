@@ -15,14 +15,15 @@ class Helper
      */
     public static function getTrackingUrl(string $parcel_no, string $language_id): string
     {
-        switch (strtolower($language_id))
-        {
+        switch (strtolower($language_id)) {
             case 'sl':
                 $lang = 'si';
                 break;
+
             case 'hr':
                 $lang = $language_id;
                 break;
+
             default:
                 throw new InvalidArgumentException(sprintf('Language ID "%s" is not supported', $language_id));
         }
