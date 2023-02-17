@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace DataLinx\DPD\Tests\Feature;
 
 use DataLinx\DPD\API;
+use DataLinx\DPD\Exceptions\APIException;
 use DataLinx\DPD\Exceptions\ValidationException;
 use DataLinx\DPD\ParcelType;
 use DataLinx\DPD\Requests\ParcelImport;
-use DataLinx\DPD\Responses\ParcelImportResponse;
 use PHPUnit\Framework\TestCase;
 
 class ParcelImportTest extends TestCase
@@ -22,6 +22,10 @@ class ParcelImportTest extends TestCase
         $this->api = new API(getenv('dpd.username'), getenv('dpd.password'), getenv('dpd.country_code'));
     }
 
+    /**
+     * @throws ValidationException
+     * @throws APIException
+     */
     public function testBasic(): void
     {
         $this->assertIsObject($this->api);
@@ -47,7 +51,6 @@ class ParcelImportTest extends TestCase
 
         $response = $request->send();
 
-        $this->assertInstanceOf(ParcelImportResponse::class, $response);
         $this->assertTrue($response->isSuccessful());
         $this->assertNull($response->getError());
         $this->assertNotEmpty($response->getParcelNumbers());
@@ -55,7 +58,7 @@ class ParcelImportTest extends TestCase
         $this->assertInstanceOf(ParcelImport::class, $response->getRequest());
     }
 
-    public function testRequiredAttribute()
+    public function testRequiredAttribute(): void
     {
         $request = new ParcelImport($this->api);
 
@@ -66,7 +69,11 @@ class ParcelImportTest extends TestCase
         $request->validate();
     }
 
-    public function testNoPropNum()
+    /**
+     * @throws ValidationException
+     * @throws APIException
+     */
+    public function testNoPropNum(): void
     {
         $request = new ParcelImport($this->api);
         $request->name1 = 'Zdravko Dren';
@@ -82,6 +89,6 @@ class ParcelImportTest extends TestCase
 
         $response = $request->send();
 
-        $this->assertInstanceOf(ParcelImportResponse::class, $response);
+        $this->assertIsObject($response);
     }
 }

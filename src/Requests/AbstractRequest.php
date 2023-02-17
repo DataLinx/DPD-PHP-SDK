@@ -3,6 +3,8 @@
 namespace DataLinx\DPD\Requests;
 
 use DataLinx\DPD\API;
+use DataLinx\DPD\Exceptions\APIException;
+use DataLinx\DPD\Exceptions\ValidationException;
 
 /**
  * Abstract request class that all requests should extend
@@ -14,7 +16,7 @@ abstract class AbstractRequest implements RequestInterface
      *
      * @var API
      */
-    protected $api;
+    protected API $api;
 
     /**
      * Create request object
@@ -30,10 +32,10 @@ abstract class AbstractRequest implements RequestInterface
      * Send request via API
      *
      * @return array
-     * @throws \DataLinx\DPD\Exceptions\APIException
-     * @throws \DataLinx\DPD\Exceptions\ValidationException
+     * @throws APIException
+     * @throws ValidationException
      */
-    protected function sendRequest()
+    protected function sendRequest(): array
     {
         $this->api->validate();
         $this->validate();

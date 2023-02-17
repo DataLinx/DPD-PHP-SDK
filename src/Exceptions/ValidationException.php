@@ -32,6 +32,7 @@ class ValidationException extends Exception
      * @param string $attribute
      * @param string $code
      * @return string
+     * @noinspection DegradedSwitchInspection
      */
     private function prepMessage(string $attribute, string $code): string
     {

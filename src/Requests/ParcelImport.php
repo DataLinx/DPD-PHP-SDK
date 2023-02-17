@@ -2,6 +2,7 @@
 
 namespace DataLinx\DPD\Requests;
 
+use DataLinx\DPD\Exceptions\APIException;
 use DataLinx\DPD\Exceptions\ValidationException;
 use DataLinx\DPD\ParcelCODType;
 use DataLinx\DPD\ParcelType;
@@ -314,7 +315,7 @@ class ParcelImport extends AbstractRequest
     /**
      * @return ParcelImportResponse
      * @throws ValidationException
-     * @throws \DataLinx\DPD\Exceptions\APIException
+     * @throws APIException
      */
     public function send(): ParcelImportResponse
     {
