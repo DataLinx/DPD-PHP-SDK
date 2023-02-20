@@ -46,4 +46,8 @@ jobs:
         run: composer update --prefer-dist --no-progress --${{ matrix.dependency-version }}
 
       - name: Run test suite
+        with:
+          DPD_USERNAME: ${{ secrets.DPD_USERNAME }}
+          DPD_PASSWORD: ${{ secrets.DPD_PASSWORD }}
+          DPD_COUNTRY_CODE: ${{ vars.DPD_COUNTRY_CODE }}
         run: composer test
