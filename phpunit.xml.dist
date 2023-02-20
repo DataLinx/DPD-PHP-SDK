@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
-		 bootstrap="vendor/autoload.php"
-		 colors="true"
-		 verbose="true">
-	<testsuites>
-		<testsuite name="Test Suite">
-			<directory>tests</directory>
-		</testsuite>
-	</testsuites>
-	<coverage processUncoveredFiles="true">
-		<include>
-			<directory suffix=".php">./src</directory>
-		</include>
-	</coverage>
-	<php>
+         xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="tests/bootstrap.php"
+         colors="true"
+         verbose="true">
+    <testsuites>
+        <testsuite name="Test Suite">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">./src</directory>
+        </include>
+    </coverage>
+    <php>
         <ini name="display_errors" value="On"/>
         <ini name="display_startup_errors" value="On"/>
         <!--
@@ -27,9 +27,11 @@
         <ini name="zend.assertions" value="1"/>
         <ini name="assert.exception" value="1"/>
         <ini name="xdebug.show_exception_trace" value="0"/>
-		<!-- You must set these to run the tests! -->
-		<env name="dpd.username" value=""/>
-		<env name="dpd.password" value=""/>
-		<env name="dpd.country_code" value=""/>
-	</php>
+        <!-- You must set these to run the tests in local development! -->
+        <!--
+        <env name="DPD_USERNAME" value=""/>
+		<env name="DPD_PASSWORD" value=""/>
+		<env name="DPD_COUNTRY_CODE" value=""/>
+		-->
+    </php>
 </phpunit>

@@ -19,7 +19,7 @@ class ParcelImportTest extends TestCase
     {
         parent::setUp();
 
-        $this->api = new API(getenv('dpd.username'), getenv('dpd.password'), getenv('dpd.country_code'));
+        $this->api = new API(getenv('DPD_USERNAME'), getenv('DPD_PASSWORD'), getenv('DPD_COUNTRY_CODE'));
     }
 
     /**
@@ -32,9 +32,9 @@ class ParcelImportTest extends TestCase
 
         $this->assertInstanceOf(API::class, $this->api);
 
-        $this->assertEquals(getenv('dpd.username'), $this->api->username);
-        $this->assertEquals(getenv('dpd.password'), $this->api->password);
-        $this->assertEquals(getenv('dpd.country_code'), $this->api->country_code);
+        $this->assertEquals(getenv('DPD_USERNAME'), $this->api->username);
+        $this->assertEquals(getenv('DPD_PASSWORD'), $this->api->password);
+        $this->assertEquals(getenv('DPD_COUNTRY_CODE'), $this->api->country_code);
 
         $request = new ParcelImport($this->api);
         $request->name1 = 'Zdravko Dren';
