@@ -28,6 +28,9 @@ jobs:
         uses: php-actions/phpunit@v3
         env:
           XDEBUG_MODE: coverage
+          DPD_USERNAME: ${{ secrets.DPD_USERNAME }}
+          DPD_PASSWORD: ${{ secrets.DPD_PASSWORD }}
+          DPD_COUNTRY_CODE: ${{ vars.DPD_COUNTRY_CODE }}
         with:
           configuration: phpunit.xml.dist
           version: 9
