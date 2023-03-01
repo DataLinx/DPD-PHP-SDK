@@ -25,6 +25,7 @@ class ParcelImportTest extends TestCase
     /**
      * @throws ValidationException
      * @throws APIException
+     * @vcr parcel_import/basic.json
      */
     public function testBasic(): void
     {
@@ -72,6 +73,7 @@ class ParcelImportTest extends TestCase
     /**
      * @throws ValidationException
      * @throws APIException
+     * @vcr parcel_import/no_prop_num.json
      */
     public function testNoPropNum(): void
     {

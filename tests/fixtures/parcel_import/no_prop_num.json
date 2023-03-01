@@ -1,0 +1,67 @@
+[{
+    "request": {
+        "method": "POST",
+        "url": "https:\/\/easyship.si\/api\/parcel\/parcel_import?name1=Zdravko+Dren&street=Partizanska+12&city=Izola&country=SI&pcode=6310&num_of_parcel=1&parcel_type=D-B2C&phone=090123456&predict=1",
+        "headers": {
+            "Host": "easyship.si"
+        }
+    },
+    "response": {
+        "status": {
+            "code": 200,
+            "message": ""
+        },
+        "headers": {
+            "access-control-allow-credentials": "true",
+            "access-control-allow-headers": "origin, content-type, accept, authorization, X-CSRF-TOKEN, client_lang, EasyShip-Backend-Version",
+            "access-control-allow-methods": "GET, POST, DELETE, PUT",
+            "access-control-allow-origin": "http:\/\/localhost",
+            "access-control-expose-headers": "Content-Disposition, hrid-csrf, EasyShip-Backend-Version",
+            "easyship-backend-version": "1.1.5",
+            "content-type": "application\/json",
+            "content-length": "60",
+            "date": "Wed, 01 Mar 2023 06:33:50 GMT"
+        },
+        "body": "{\"status\":\"ok\",\"errlog\":null,\"pl_number\":[\"16962023439767\"]}",
+        "curl_info": {
+            "url": "https:\/\/easyship.si\/api\/parcel\/parcel_import?name1=Zdravko+Dren&street=Partizanska+12&city=Izola&country=SI&pcode=6310&num_of_parcel=1&parcel_type=D-B2C&phone=090123456&predict=1",
+            "content_type": "application\/json",
+            "http_code": 200,
+            "header_size": 497,
+            "request_size": 273,
+            "filetime": -1,
+            "ssl_verify_result": 0,
+            "redirect_count": 0,
+            "total_time": 0.153348,
+            "namelookup_time": 0.00449,
+            "connect_time": 0.010542,
+            "pretransfer_time": 0.026826,
+            "size_upload": 0,
+            "size_download": 60,
+            "speed_download": 392,
+            "speed_upload": 0,
+            "download_content_length": 60,
+            "upload_content_length": -1,
+            "starttransfer_time": 0.153297,
+            "redirect_time": 0,
+            "redirect_url": "",
+            "primary_ip": "194.28.110.135",
+            "certinfo": [],
+            "primary_port": 443,
+            "local_ip": "172.17.0.2",
+            "local_port": 52162,
+            "http_version": 2,
+            "protocol": 2,
+            "ssl_verifyresult": 0,
+            "scheme": "HTTPS",
+            "appconnect_time_us": 26761,
+            "connect_time_us": 10542,
+            "namelookup_time_us": 4490,
+            "pretransfer_time_us": 26826,
+            "redirect_time_us": 0,
+            "starttransfer_time_us": 153297,
+            "total_time_us": 153348
+        }
+    },
+    "index": 0
+}]
