@@ -27,7 +27,8 @@ if (filter_input(INPUT_ENV, 'LIVE')) {
 // Configure VCR
 VCR::configure()
     ->setStorage('json')
-    ->setCassettePath($fixtures_dir);
+    ->setCassettePath($fixtures_dir)
+    ->enableLibraryHooks(['curl']);
 
 VCR::turnOn();
 
