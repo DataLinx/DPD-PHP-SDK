@@ -17,6 +17,8 @@ It appears each region has its own version, so this will not work for any other 
 - Supported OS: Linux or Windows
 - Required PHP extensions: curl, json
 
+Note: the package works on PHP 8.2, but currently testing in CI for 8.2 fails, because it is still not supported in the [php-vcr](https://php-vcr.github.io/) package, which we use for testing.
+
 ## Installing
 Download it with composer:
 ```shell
