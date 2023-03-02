@@ -71,15 +71,13 @@ If you have some other suggestions how to make this package better, please open 
 The project adheres to the PSR-4 and PSR-12 standards.
 
 ### Running tests
-The tests run against a testing API instance provided by DPD, so you need the username and password to run them. You can get them by writing to it@dpd.si.
+By default, the tests run against static fixtures which were captured by the php-vcr package.
 
-Once you have the credentials, you can set them as environment variables, e.g. in `phpunit.xml`:
+If you want to update the fixtures or run the tests against the live (but still testing) API provided by DPD, you need the username and password to run them. You can get them by writing to it@dpd.si.
 
-```
-<env name="DPD_USERNAME" value="myusername"/>
-<env name="DPD_PASSWORD" value="mypassword"/>
-<env name="DPD_COUNTRY_CODE" value="SI"/>
-````
+Once you have the credentials, you can set them in `phpunit.xml`.
+
+After that, you also need to set a environment variable with the name `LIVE` and value `1`. This will delete the fixtures before running the tests, which forces live requests to be made.
 
 ### Developer resources
 * [DPD EasyShip website](https://easyship.si/login)
