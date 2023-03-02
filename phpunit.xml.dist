@@ -31,11 +31,9 @@
         <ini name="zend.assertions" value="1"/>
         <ini name="assert.exception" value="1"/>
         <ini name="xdebug.show_exception_trace" value="0"/>
-        <!-- You must set these to run the tests in local development! -->
-        <!--
-        <env name="DPD_USERNAME" value=""/>
-		<env name="DPD_PASSWORD" value=""/>
-		<env name="DPD_COUNTRY_CODE" value=""/>
-		-->
+        <!-- You must set these to valid values if you want to run the tests against the live testing API -->
+        <env name="DPD_USERNAME" value="username"/>
+        <env name="DPD_PASSWORD" value="password"/>
+        <env name="DPD_COUNTRY_CODE" value="SI"/>
     </php>
 </phpunit>
