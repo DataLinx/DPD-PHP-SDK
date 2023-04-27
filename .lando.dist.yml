@@ -5,6 +5,9 @@ services:
     via: cli
     webroot: .
     xdebug: "debug,coverage,develop"
+    volumes:
+      # Add directory for PhpStorm coverage XML report
+      - ./build/coverage/xml/:/opt/phpstorm-coverage/
 tooling:
   php:
     service: appserver
