@@ -1,19 +1,16 @@
 name: dpd-php-sdk
 services:
   appserver:
-    type: php:8.1
+    type: php:custom
     via: cli
-    webroot: .
-    xdebug: "debug,coverage,develop"
-    volumes:
-      # Add directory for PhpStorm coverage XML report
-      - ./build/coverage/xml/:/opt/phpstorm-coverage/
+    overrides:
+      image: slimdeluxe/php:7.4
 tooling:
   php:
     service: appserver
   composer:
     service: appserver
-  phpunit:
+  test:
     service: appserver
-    description: Run PHPUnit tests
-    cmd: "/app/vendor/bin/phpunit"
+    description: Run tests
+    cmd: "composer test"
