@@ -13,19 +13,19 @@
         "croatia",
         "hrvatska"
     ],
+    "homepage": "https://github.com/datalinx/dpd-php-sdk",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Omer Šabić",
-            "email": "omer@datalinx.si"
+            "name": "DataLinx",
+            "email": "info@datalinx.si"
         }
     ],
-    "homepage": "https://github.com/datalinx/dpd-php-sdk",
-    "minimum-stability": "stable",
     "config": {
         "sort-packages": true
     },
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "DataLinx\\DPD\\": "src/"
@@ -50,7 +50,7 @@
         "phpunit/phpunit": "^9.5"
     },
     "scripts": {
-        "test": "vendor/bin/phpunit",
-        "format": "vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php --allow-risky=yes"
+        "format": "vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php --allow-risky=yes",
+        "test": "vendor/bin/phpunit"
     }
 }
