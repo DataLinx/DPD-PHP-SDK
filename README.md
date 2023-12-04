@@ -3,9 +3,9 @@
 ![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/datalinx/dpd-php-sdk)
 [![Packagist Version](https://img.shields.io/packagist/v/datalinx/dpd-php-sdk)](https://packagist.org/packages/datalinx/dpd-php-sdk)
 ![Packagist Downloads](https://img.shields.io/packagist/dt/datalinx/dpd-php-sdk)
+[![Tests](https://github.com/DataLinx/DPD-PHP-SDK/actions/workflows/test-runner.yml/badge.svg)](https://github.com/DataLinx/DPD-PHP-SDK/actions/workflows/test-runner.yml)
 [![codecov](https://codecov.io/gh/DataLinx/DPD-PHP-SDK/branch/master/graph/badge.svg?token=0NKRZC1TZL)](https://codecov.io/gh/DataLinx/DPD-PHP-SDK)
-[![Tests](https://github.com/DataLinx/DPD-PHP-SDK/actions/workflows/run-tests.yml/badge.svg)](https://github.com/DataLinx/DPD-PHP-SDK/actions/workflows/run-tests.yml)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 ![Packagist License](https://img.shields.io/packagist/l/datalinx/dpd-php-sdk)
 
 ## About
@@ -66,9 +66,9 @@ try {
 ## Contributing
 Pull requests for new endpoint implementations are highly welcome.
 
-If you have some other suggestions how to make this package better, please open an issue or even better, submit a pull request.
+If you have some suggestions how to make this package better, please open an issue or even better, submit a pull request.
 
-The project adheres to the PSR-4 and PSR-12 standards.
+Should you want to contribute, please see the development guidelines in the [DataLinx PHP package template](https://github.com/DataLinx/php-package-template).
 
 ### Running tests
 By default, the tests run against static fixtures which were captured by the php-vcr package.
